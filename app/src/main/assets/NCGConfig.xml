@@ -1,0 +1,25 @@
+<config>
+    <!--   appId参数为运营提供的游戏id, appReleaseId为提供的发布记录id, 必填-->
+    <ncgsdk appId="1636" appMode="release"  appReleaseId="1636001"/>
+    <!--   游戏项目域名, 必须修改为运营提供的域名, 必填-->
+    <host url="https://www.demo.kate4.com" />
+    <!--   google登录、支付参数, 必填-->
+    <google
+        billing="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApzg1S2ZxpPnGgd9n6oFb3e0OgCuyGO84gUG+Y4p3Lsl1ONe74540Z6SE1rJbUHzJEUwYyRzKHYwPzYi0UyFiI109lQEqicA04RCzQZmUtxH3UsMbmO4NGX97kEQsa6D+o0akvDh1WPMNaS9XIJPw6VWvVJkLp5OADX3es9eBPbhruZa7Lr0gnZDG689P/BL5jSA7TpRhju5ZsETVbgtXO+yhdbO8qD9Bjm2ZeeVLDmgyGj9s9fgzY9tifA0QVYjgFv9OEtk0UAB9vDmqxXN9sPLgKi1QGJT8zDkZ1SnW8hg0Jy7uwpoFFuLydxrzVQCuRNcLfo0cztNA/KI5L//O2QIDAQAB" />
+    <google clientId="636297321157-teit40f0rndq0je3ek688smtr02npehr.apps.googleusercontent.com" />
+    <!--   line登录参数, 没有line登录方式可以不填-->
+    <line channel="" />
+    <!--   twitter登录参数, 没有twitter登录方式活分享可以不填-->
+    <twitter comsumerkey=""
+        comsumersecret="" />
+    <!--   韩国cafe论坛参数, 不是韩国版本或不需要此功能可以不填-->
+    <cafe id="" clientId="" clientSecret=""/>
+    <!--   aihelp参数固定配置, 对接时请不要修改参数, 必填-->
+    <aihelp domain="2700329.aihelp.net" appId="2700329_platform_29cf1bd81a7ce25f1c6bd601fe2089dd" appKey="2700329_app_d2c01935ff74413f884f6e50b291dd37"/>
+    <!--   appflyers参数固定配置, 对接时请不要修改参数, 必填-->
+    <appflyers key="g7ZP9TqQ4S8AF9zeQD9Koe" />
+    <!--   参数固定配置, 对接时请不要修改参数-->
+    <esgame confirm="0" />
+    <!--   参数固定配置, 对接时请不要修改参数-->
+    <sy confirm="1" />
+</config>

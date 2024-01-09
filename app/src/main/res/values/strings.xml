@@ -1,0 +1,7 @@
+<resources>
+    <!--todo 替换facebook_app_id、fb_login_protocol_scheme、facebook_client_token参数-->
+    <string name="facebook_app_id">facebook_app_id</string>
+    <string name="fb_login_protocol_scheme">fbfacebook_app_id</string>
+    <string name="facebook_client_token">fb_client_token</string>
+    <string name="app_name">"NCGDEMO"</string>
+</resources>
