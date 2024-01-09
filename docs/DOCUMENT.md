@@ -406,7 +406,7 @@ NCGSDK.doSpot(String spotJson)
 | spotType | string | 事件类型,取值为:1:创建角色 2:完成新手引导 3:玩家等级变化后上传（升级） 4:玩家选择完区服进入游戏                                                                                                                                                                                                         |
 | extra    | json   | 这是角色具体信息,格式为Json,包括信息:roleId:角色ID(必传),roleName:角色名(必传),roleServer:区服ID(必传),serverName:区服名字(必传),roleLevel:角色等级(必传),vipLevel:角色Vip等级(无vip系统可传0),zone:大区ID(游戏有大区分区例如东西区,传入大区id,游戏没有此设定可不传),zoneName:大区名(同大区id),globalRoleId:全局唯一的角色ID(游戏唯一角色id,如果角色id是唯一的可传如角色id) |
 
-**请注意，玩家选择完区服上报进入游戏 （spotType为4）必须接入，否则会影响SDK功能，其余上报不接入会影响打点数据准确性**
+**请注意，玩家选择完区服上报进入游戏 （spotType为4）必须接入，否则会影响SDK功能例如个人中心账号列表里将无法看到历史账号，其余上报不接入会影响打点数据准确性**
 调用示例：
 
 ```

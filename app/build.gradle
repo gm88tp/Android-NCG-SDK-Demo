@@ -6,8 +6,8 @@ android {
         applicationId "com.immortaltaoists.en"
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 42
-        versionName "1.4.7"
+        versionCode 1
+        versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         multiDexEnabled true
