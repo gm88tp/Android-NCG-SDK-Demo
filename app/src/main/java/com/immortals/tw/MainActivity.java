@@ -67,10 +67,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         finish();
                         break;
                     case NCGActionCode.ACTION_LOGIN_SUCC://登录成功
-                        String spot = "{\"spotType\":4,\"extra\":{\"roleName\":\"IleanaJudd\",\"vipLevel\":3,\"serverName\":1服,\"zone\":001,\"roleServer\":55,\"roleLevel\":1,\"roleId\":1234567,\"globalRoleId\":ncg_70_10691603" + "}}";
-                        NCGSDK.doSpot(spot);
+//                        String spot = "{\"spotType\":4,\"extra\":{\"roleName\":\"IleanaJudd\",\"vipLevel\":3,\"serverName\":1服,\"zone\":001,\"roleServer\":55,\"roleLevel\":1,\"roleId\":1234567,\"globalRoleId\":ncg_70_10691603" + "}}";
+//                        NCGSDK.doSpot(spot);
+//                        JSONObject result = (JSONObject) msg.obj;
+//                        Log.e(TAG, "登录成功" + result.toString());
+//                        ToastHelper.toast(MainActivity.this, result.toString());
+
                         JSONObject result = (JSONObject) msg.obj;
                         Log.e(TAG, "登录成功" + result.toString());
+                        NCGSDK.getFcmToken();
                         ToastHelper.toast(MainActivity.this, result.toString());
                         break;
                     case NCGActionCode.ACTION_LOGIN_CANCEL://退出登录

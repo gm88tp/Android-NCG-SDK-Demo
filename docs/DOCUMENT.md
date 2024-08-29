@@ -1,24 +1,47 @@
-# NCG Android海外游戏1.0版本SDK 对接文档 2024/01/08
+# NCG Android海外游戏1.1版本SDK 对接文档 2024/08/28
 
 ## 1.相关依赖引入
 在工程级别的build.gradle 的android内加入以下代码
-注：从2023年8月2日起, 在Google市场上架应用时必须targetSdkVersion>=33, 2023年11月1日起, 在Google市场更新应用时必须targetSdkVersion>=33, 详细[适配文档](https://developer.android.com/about/versions/13/behavior-changes-13?hl=zh-cn)
+注：从2023年8月2日起, 在Google市场上架应用时必须targetSdkVersion>=33, 2023年11月1日起, 在Google市场更新应用时必须targetSdkVersion>=33, 详细[适配文档]()
 
+
+v1.1.0 更新:
+从1.0.1版本迁移时请注意下列更新操作
+
+1.更新NCGsdk_1.1.0.aar SDK文件
+
+2.更新targetSdkVersion为34, 请注意适配其他代码
+
+2.1更新AndroidManifest.xml文件内修改namespace代码
+
+2.2更新App级别的gradle文件，对ToDo 内容中的 1.1.0版本新增或修改 代码进行修改替换
+
+2.3更新项目级别的gradle文件和gradle-wrapper.properties文件，符合更新targetSdkVersion为34所对应的编辑器和gradle插件版本
 ```
-   defaultConfig{
-        minSdkVersion 21 //minSdkVersion根据游戏需求制定, 最好大于等于21
-        targetSdkVersion 33
+    namespace 'com.immortals.tw'
+    compileSdkVersion 34
+    defaultConfig {
+        applicationId "com.wuxia001.discount.coupon.free.sale.code.cheap.gp"
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
         multiDexEnabled true
     }
+    
     sourceSets {
         main {
             assets.srcDirs = ['../assets', 'src/main/assets', 'src/main/assets/']
             jniLibs.srcDirs = ['libs']
         }
     }
+    
+    //指定jdk版本
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 ```
 
@@ -26,10 +49,11 @@
 
 ```
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation(name: 'NCGsdk_1.0', ext: 'aar')
     implementation(name: 'cafeSdk-4.4.1', ext: 'aar')
+    implementation(name: 'NCGsdk_1.1.0', ext: 'aar')
     //谷歌需要依赖
-    implementation 'com.google.android.play:core:1.10.3'
+//    implementation 'com.google.android.play:core:1.10.3'
+    implementation 'com.google.android.play:review:2.0.1'//todo 1.1.0版本新增
     implementation 'com.google.gms:google-services:4.3.15'
     implementation 'com.google.android.gms:play-services-analytics:18.0.4'
     implementation 'com.google.android.gms:play-services-auth:20.7.0'
@@ -42,12 +66,12 @@
     api 'com.facebook.android:audience-network-sdk:6.16.0'
 
     //广告SDK
-    implementation 'com.google.android.gms:play-services-ads:22.4.0'
-    implementation 'com.google.ads.mediation:applovin:11.11.3.0'
+    implementation 'com.google.android.gms:play-services-ads:23.3.0'//todo 1.1.0版本修改
+    implementation 'com.google.ads.mediation:applovin:12.6.0.0'//todo 1.1.0版本修改
     implementation 'com.google.ads.mediation:facebook:6.16.0.0'
 
     // firebase相关SDK
-    implementation platform('com.google.firebase:firebase-bom:32.3.1')
+    implementation platform('com.google.firebase:firebase-bom:33.1.2')//todo 1.1.0版本修改
     implementation 'com.google.firebase:firebase-crashlytics'
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-messaging'
@@ -111,7 +135,7 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.4' //推荐最低版本
+        classpath 'com.android.tools.build:gradle:8.1.0'
         classpath 'com.google.gms:google-services:4.3.15'
         classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.9'
         classpath 'com.google.firebase:perf-plugin:1.4.2'
