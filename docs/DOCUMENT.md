@@ -2,7 +2,7 @@
 
 ## 1.相关依赖引入
 在工程级别的build.gradle 的android内加入以下代码
-注：从2023年8月2日起, 在Google市场上架应用时必须targetSdkVersion>=33, 2023年11月1日起, 在Google市场更新应用时必须targetSdkVersion>=33, 详细[适配文档]()
+注：从2024年8月31日起, 在Google市场上架应用时必须targetSdkVersion>=34, 2024年8月31日起, 在Google市场更新应用时必须targetSdkVersion>=34, 详细[适配文档]()
 
 
 v1.1.0 更新:
